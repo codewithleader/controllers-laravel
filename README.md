@@ -2,31 +2,31 @@
 
 ## Instalaciones
 
--   Instalamos gestionador de paquetes de LARAVEL (Si ya lo instalaste NO Volver a instalar):
+- Instalamos gestionador de paquetes de LARAVEL (Si ya lo instalaste NO Volver a instalar):
 
 ```bash
 composer global require laravel/installer
 ```
 
--   Crear nueva app:
+- Crear nueva app:
 
 ```bash
 laravel new appname
 ```
 
--   Instalar dependencias (Opcional):
+- Instalar dependencias (Opcional):
 
 ```bash
 composer install
 ```
 
--   Generar un AppKey (Opcional):
+- Generar un AppKey (Opcional):
 
 ```bash
 php artisan key:generate
 ```
 
--   Run:
+- Run:
 
 ```bash
 php artisan serve
@@ -55,6 +55,7 @@ php artisan make:migration create_name_table
 ```
 
 2. SINCRONIZA la base de datos con las migraciones que tengamos en `database/migrations`
+
 ```bash
 php artisan migrate
 ```
@@ -112,3 +113,7 @@ php artisan make:model Name --migration
 ```bash
 php artisan make:controller NameController
 ```
+
+La consulta SQL en el minuto 1:14:25 no funciona en Laravel 10. Hay dos posibles soluciones para conseguir lo mismo:
+$users = DB::select("SELECT * FROM users WHERE age = 30");
+$users = DB::table('users')->select(DB::raw('\*'))->where('age', '=', 32)->get();
