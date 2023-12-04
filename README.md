@@ -114,6 +114,6 @@ php artisan make:model Name --migration
 php artisan make:controller NameController
 ```
 
-La consulta SQL en el minuto 1:14:25 no funciona en Laravel 10. Hay dos posibles soluciones para conseguir lo mismo:
-$users = DB::select("SELECT * FROM users WHERE age = 30");
-$users = DB::table('users')->select(DB::raw('\*'))->where('age', '=', 32)->get();
+# Eloquent ORM
+
+- [https://laravel.com/docs/10.x/eloquent](https://laravel.com/docs/10.x/eloquent)
