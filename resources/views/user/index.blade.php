@@ -13,9 +13,10 @@
   <ul>
     {{-- Directiva Interactiva @foreach --}}
     @forelse($users as $user)
-      <li>
-        <h3>{{ $user->name }}</h3>
-        <p>{{ $user->email }}</p>
+      <li style="all: unset;">
+        <h3>Nombre: {{ $user->name }}</h3>
+        <p>Email: {{ $user->email }}</p>
+        <p>Edad: {{ $user->age }}</p>
       </li>
     @empty
       <li>List empty.</li>
