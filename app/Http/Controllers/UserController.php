@@ -10,6 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
+        // $users = User::where('age', '>=', '26')->orWhere()->orderBy('name', 'desc')->limit(1)->get();
         $users = User::all();
         // return view('user.index', ['users' => $users]);
         return view('user.index', compact('users')); // compact() nos permite simplificar el array asociativo cuando la variable es igual a los datos 'users' $users
